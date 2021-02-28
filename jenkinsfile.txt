@@ -21,11 +21,6 @@ pipeline {
                 stash name: 'jarfile', includes: 'target/*.jar'
             }
         }
-        stage('copy to some other location'){
-            agent { label 'master'}
-            steps{
-                unstash name: 'jarfile'
-            }
-        }
+        
     }
 }
