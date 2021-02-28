@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('scm') {
             steps {
-                git 'https://github.com/jithinchacko/multibranchpipe.git'
+                git branch: developer, url: 'https://github.com/jithinchacko/multibranchpipe.git'
             }
         }
         stage('build') {
