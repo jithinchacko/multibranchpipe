@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('scm') {
             steps {
-                git branch: qa, url: 'https://github.com/jithinchacko/multibranchpipe.git'
+                git branch: 'qa', url: 'https://github.com/jithinchacko/multibranchpipe.git'
             }
         }
         stage('build') {
