@@ -18,6 +18,12 @@ pipeline {
         stage('postbuild') {
             steps{
                 archiveArtifacts "target/*.jar"
+                stash name: 'jarfile', includes: 'target/*.jar'
+            }
+        }
+        stage('copy to some other location'){
+            steps{
+                unstash name: 'jarfile'
             }
         }
     }
