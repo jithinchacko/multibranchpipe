@@ -1,6 +1,8 @@
 pipeline {
     agent { label 'master'}
-    
+    triggers {
+        cron('H * * * 1-5')
+    }
     parameters {
         string (name: 'BUILDMETHOD', defaultValue: 'clean package', description: 'build method in maven')
     }
